@@ -13,7 +13,23 @@ public class Main {
         mainObj.printOddIndexElements(arr);
         mainObj.printDuplicateElements();
         mainObj.sortArrayAsc();
+        System.out.println(mainObj.findSecondLargestElement());
 
+    }
+
+    private int findSecondLargestElement() {
+        int[] arr = {1, 2, 3, 4, -1, 3, 4, 6, 4, 6, 3, 35, 5, -1, 35, 322, 3, 5, 6, 6};
+        //Approch 1
+        int firstLargest = findLargestElement(arr);
+        int secondLargest = arr[0];
+        for (int i : arr) {
+            if (i > secondLargest && i < firstLargest)
+                secondLargest = i;
+        }
+        return secondLargest;
+        //Approch 2
+        /* arr=Arrays.stream(arr).distinct().sorted().toArray();
+           return arr[arr.length-2];*/
     }
 
     private void sortArrayAsc() {
