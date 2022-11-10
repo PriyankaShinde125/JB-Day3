@@ -4,6 +4,16 @@ public class Main {
         Main mainObj = new Main();
         mainObj.printArrayElement(arr);
         mainObj.findElementFrequency();
+        System.out.println("Largest Element from array is : " + mainObj.findLargestElement(arr));
+    }
+
+    private int findLargestElement(int[] arr) {
+        int largest = arr[0];
+        for (int i : arr) {
+            if (i > largest)
+                largest = i;
+        }
+        return largest;
     }
 
     private void printArrayElement(int[] arr) {
