@@ -7,6 +7,15 @@ public class Main {
         System.out.println("Largest Element from array is : " + mainObj.findLargestElement(arr));
         System.out.println("Largest Element from array is : " + mainObj.findSmallestElement(arr));
         mainObj.printEvenIndexElements(arr);
+        mainObj.printReverseArray(arr);
+
+    }
+
+    private void printReverseArray(int[] arr) {
+        System.out.println();
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
     }
 
     private void printEvenIndexElements(int[] arr) {
