@@ -8,7 +8,17 @@ public class Main {
         System.out.println("Largest Element from array is : " + mainObj.findSmallestElement(arr));
         mainObj.printEvenIndexElements(arr);
         mainObj.printReverseArray(arr);
+        //Array_OddPositionElement
+        mainObj.printOddIndexElements(arr);
 
+    }
+
+    private void printOddIndexElements(int[] arr) {
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 != 0)
+                System.out.print(arr[i] + " ");
+        }
     }
 
     private void printReverseArray(int[] arr) {
