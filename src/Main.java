@@ -8,9 +8,27 @@ public class Main {
         System.out.println("Largest Element from array is : " + mainObj.findSmallestElement(arr));
         mainObj.printEvenIndexElements(arr);
         mainObj.printReverseArray(arr);
-        //Array_OddPositionElement
         mainObj.printOddIndexElements(arr);
+        mainObj.printDuplicateElements();
 
+    }
+
+    private void printDuplicateElements() {
+        int[] arr = {1, 2, 3, 4, -1, 3, 4, 6, 4, 6, 3, 35, 5, -1, 35, 322, 3, 5, 6, 6};
+        boolean isRepeated;
+        for (int i = 0; i < arr.length; i++) {
+            isRepeated = false;
+            if (checkIsVisited(arr, i, arr[i]))
+                continue;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    isRepeated = true;
+                    break;
+                }
+            }
+            if (isRepeated)
+                System.out.print(arr[i] + "  ");
+        }
     }
 
     private void printOddIndexElements(int[] arr) {
