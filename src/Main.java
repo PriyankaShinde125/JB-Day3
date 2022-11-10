@@ -5,6 +5,16 @@ public class Main {
         mainObj.printArrayElement(arr);
         mainObj.findElementFrequency();
         System.out.println("Largest Element from array is : " + mainObj.findLargestElement(arr));
+        System.out.println("Largest Element from array is : " + mainObj.findSmallestElement(arr));
+    }
+
+    private int findSmallestElement(int[] arr) {
+        int smallest = arr[0];
+        for (int i : arr) {
+            if (i < smallest)
+                smallest = i;
+        }
+        return smallest;
     }
 
     private int findLargestElement(int[] arr) {
@@ -19,6 +29,7 @@ public class Main {
     private void printArrayElement(int[] arr) {
         for (int i : arr)
             System.out.print(i + " ");
+        System.out.println("\n");
     }
 
     private void findElementFrequency() {
