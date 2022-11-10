@@ -6,6 +6,14 @@ public class Main {
         mainObj.findElementFrequency();
         System.out.println("Largest Element from array is : " + mainObj.findLargestElement(arr));
         System.out.println("Largest Element from array is : " + mainObj.findSmallestElement(arr));
+        mainObj.printEvenIndexElements(arr);
+    }
+
+    private void printEvenIndexElements(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0)
+                System.out.print(arr[i] + " ");
+        }
     }
 
     private int findSmallestElement(int[] arr) {
