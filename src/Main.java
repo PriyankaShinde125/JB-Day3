@@ -13,9 +13,7 @@ public class Main {
 
     private void findElementFrequency() {
         int[] arr = {1, 2, 3, 4, -1, 3, 4, 6, 4, 6, 3, 35, 5, -1, 35, 322, 3, 5, 6, 6};
-        int[] visited = new int[arr.length];
         int count = 0;
-        boolean isVisited = false;
         for (int i = 0; i < arr.length; i++) {
             count = 1;
             if (checkIsVisited(arr, i, arr[i]))
