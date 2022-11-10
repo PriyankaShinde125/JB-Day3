@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
@@ -10,7 +12,33 @@ public class Main {
         mainObj.printReverseArray(arr);
         mainObj.printOddIndexElements(arr);
         mainObj.printDuplicateElements();
+        mainObj.sortArrayAsc();
 
+    }
+
+    private void sortArrayAsc() {
+        int[] arr = {1, 2, 3, 4, -1, 3, 4, 6, 4, 6, 3, 35, 5, -1, 35, 322, 3, 5, 6, 6};
+
+        //Approch 1
+        /* Arrays.sort(arr);
+        Arrays.stream(arr).forEach(i -> System.out.println(i +" "));*/
+
+        //Approch 2
+        int i = 0;
+        int temp;
+        while (i < arr.length) {
+            for (int j = 0; j < arr.length; j++) {
+                for (int k = j + 1; k < arr.length; k++) {
+                    if (arr[j] > arr[k]) {
+                        temp = arr[j];
+                        arr[j] = arr[k];
+                        arr[k] = temp;
+                    }
+                }
+            }
+            i++;
+        }
+        printArrayElement(arr);
     }
 
     private void printDuplicateElements() {
